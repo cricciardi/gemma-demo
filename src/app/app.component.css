@@ -1,0 +1,111 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  height: 80vh;
+  background-color: #fff0f6; /* Altro rosa pastello */
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Area dei messaggi */
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Messaggi */
+.message {
+  padding: 10px 16px;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 1rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.from-user {
+  background-color: #ffe4ec; /* Rosa chiaro per utente */
+  color: #333;
+  align-self: flex-end;
+}
+
+.from-bot {
+  background-color: #ffffff; /* Bianco per bot */
+  color: #333;
+  align-self: flex-start;
+}
+
+/* Area input */
+.input-area {
+  display: flex;
+  padding: 12px;
+  background-color: #fff8fb;
+  border-top: 1px solid #f0cbd6;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background-color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.input-area button {
+  margin-left: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff85a2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+  background-color: #ff6b8c;
+}
+
+.loading {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 40px;
+}
+
+.dot {
+  animation: blink 1.4s infinite both;
+  color: #444444;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
