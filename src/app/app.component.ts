@@ -29,10 +29,10 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.addGemmaIntoProject();
+    await this.addModelIntoProject();
   }
 
-  public async addGemmaIntoProject() {
+  public async addModelIntoProject() {
     this.genai = await FilesetResolver.forGenAiTasks(
       "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@latest/wasm"
     );
