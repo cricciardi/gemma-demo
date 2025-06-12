@@ -53,7 +53,11 @@ export class AppComponent implements OnInit {
       this.addMessageToSignal({from: 'user', text: this.$currentText()})
       this.$loading.set(true);
 
-      const query = this.$currentText() as string;
+      const initialInstruction = 'Write the text in a simple and clear way. Avoid technical jargon and complex sentences.' +
+        'Do not use bold, italics, markdown, asterisks, or any other text formatting.' +
+        'The content should be easy to understand, even for someone without technical knowledge. ';
+
+      const query = initialInstruction + this.$currentText() as string;
       this.setCurrentTextSignal(undefined);
       const response = await this.llmInference.generateResponse(query);
 
